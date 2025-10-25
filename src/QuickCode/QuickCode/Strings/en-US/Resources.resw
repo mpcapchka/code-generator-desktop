@@ -117,49 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CodeGenerationType_App" xml:space="preserve">
+  <data name="QrCodeGenerationType_App" xml:space="preserve">
     <value>App</value>
   </data>
-  <data name="CodeGenerationType_Call" xml:space="preserve">
+  <data name="QrCodeGenerationType_Call" xml:space="preserve">
     <value>Call</value>
   </data>
-  <data name="CodeGenerationType_Email" xml:space="preserve">
+  <data name="QrCodeGenerationType_Email" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="CodeGenerationType_Event" xml:space="preserve">
+  <data name="QrCodeGenerationType_Event" xml:space="preserve">
     <value>Event</value>
   </data>
-  <data name="CodeGenerationType_Image" xml:space="preserve">
+  <data name="QrCodeGenerationType_Image" xml:space="preserve">
     <value>Image</value>
   </data>
-  <data name="CodeGenerationType_Link" xml:space="preserve">
+  <data name="QrCodeGenerationType_Link" xml:space="preserve">
     <value>Link</value>
   </data>
-  <data name="CodeGenerationType_Pdf" xml:space="preserve">
+  <data name="QrCodeGenerationType_Pdf" xml:space="preserve">
     <value>PDF</value>
   </data>
-  <data name="CodeGenerationType_Sms" xml:space="preserve">
+  <data name="QrCodeGenerationType_Sms" xml:space="preserve">
     <value>SMS</value>
   </data>
-  <data name="CodeGenerationType_SocialMedia" xml:space="preserve">
+  <data name="QrCodeGenerationType_SocialMedia" xml:space="preserve">
     <value>Social Media</value>
   </data>
-  <data name="CodeGenerationType_Text" xml:space="preserve">
+  <data name="QrCodeGenerationType_Text" xml:space="preserve">
     <value>Text</value>
   </data>
-  <data name="CodeGenerationType_VCard" xml:space="preserve">
+  <data name="QrCodeGenerationType_VCard" xml:space="preserve">
     <value>VCard</value>
   </data>
-  <data name="CodeGenerationType_Video" xml:space="preserve">
+  <data name="QrCodeGenerationType_Video" xml:space="preserve">
     <value>Video</value>
   </data>
-  <data name="CodeGenerationType_WhatsApp" xml:space="preserve">
+  <data name="QrCodeGenerationType_WhatsApp" xml:space="preserve">
     <value>WhatsApp</value>
   </data>
-  <data name="CodeGenerationType_Wifi" xml:space="preserve">
+  <data name="QrCodeGenerationType_Wifi" xml:space="preserve">
     <value>WiFi</value>
   </data>
-  <data name="CodeGenQrCodePreview.Text" xml:space="preserve">
+  <data name="QrCodeGenerationPreview.Text" xml:space="preserve">
     <value>Preview QR Code</value>
+  </data>
+  <data name="QrCodeGenerateButton.Content" xml:space="preserve">
+    <value>Generate QR Code</value>
+  </data>
+  <data name="QrCodeGenerationNavItem.Content" xml:space="preserve">
+    <value>QR Code</value>
   </data>
 </root>

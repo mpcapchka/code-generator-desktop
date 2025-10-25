@@ -24,6 +24,10 @@ namespace QuickCode
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        #region Fields
+        private readonly Microsoft.Windows.ApplicationModel.Resources.ResourceLoader resourceLoader = new();
+        #endregion
+
         #region Constructors
         public MainWindow()
         {
@@ -41,7 +45,7 @@ namespace QuickCode
         }
         private void navView_Loaded(object sender, RoutedEventArgs e)
         {
-            navView.SelectedItem = singleCodePageNavItem;
+            navView.SelectedItem = qrCodeGenerationNavItem;
         }
         private void navView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
@@ -49,12 +53,10 @@ namespace QuickCode
             var tagStringVvalue = item.Tag?.ToString();
             switch (tagStringVvalue)
             {
-                case "SingleCodePage": navFrame.Navigate(typeof(SingleCodeGeneratorPage)); break;
+                case "QrCodeGenerationPage": navFrame.Navigate(typeof(QrCodeGeneratorPage)); navView.Header = item.Content; break;
                 default: break;
             }
         }
         #endregion
-
-        
     }
 }

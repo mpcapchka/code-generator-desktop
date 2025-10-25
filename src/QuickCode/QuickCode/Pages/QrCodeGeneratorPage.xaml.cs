@@ -18,13 +18,16 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace QuickCode.Controls
+namespace QuickCode.Pages
 {
-    public sealed partial class CodeGeneratorContainer : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class QrCodeGeneratorPage : Page
     {
-        public CodeGeneratorContainer()
+        public QrCodeGeneratorPage()
         {
-            this.DataContext = App.Current.Services.GetService<CodeGeneratorViewModel>();
+            this.DataContext = App.Current.Services.GetService<QrCodeGeneratorViewModel>();
             InitializeComponent();
         }
     }

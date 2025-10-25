@@ -11,10 +11,6 @@
     <Nullable>enable</Nullable>
 	<DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Controls\CodeGeneratorContainer.xaml" />
-    <None Remove="Pages\SingleCodeGeneratorPage.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
@@ -22,19 +18,15 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="CommunityToolkit.WinUI.Behaviors" Version="8.2.250402" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6584" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251003001" />
+    <PackageReference Include="QRCoder" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Pages\SingleCodeGeneratorPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Controls\CodeGeneratorContainer.xaml">
+    <Page Update="Pages\QrCodeGeneratorPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

@@ -15,7 +15,7 @@ namespace QuickCode.Components.Converters
         #region Methods
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is CodeGenerationType codeGenerationType) return GetLocalizedText(codeGenerationType);
+            if (value is QrCodeGenerationType codeGenerationType) return GetLocalizedText(codeGenerationType);
             else return value;
         }
         public object ConvertBack(object value, Type targetType, object parameter, string language)
@@ -23,24 +23,24 @@ namespace QuickCode.Components.Converters
             throw new NotImplementedException();
         }
 
-        private string GetLocalizedText(CodeGenerationType value)
+        private string GetLocalizedText(QrCodeGenerationType value)
         {
             switch (value)
             {
-                case CodeGenerationType.Link: return resourceLoader.GetString("CodeGenerationType_Link");
-                case CodeGenerationType.Text: return resourceLoader.GetString("CodeGenerationType_Text"); 
-                case CodeGenerationType.Email: return resourceLoader.GetString("CodeGenerationType_Email"); 
-                case CodeGenerationType.Call: return resourceLoader.GetString("CodeGenerationType_Call"); 
-                case CodeGenerationType.Sms: return resourceLoader.GetString("CodeGenerationType_Sms"); 
-                case CodeGenerationType.VCard: return resourceLoader.GetString("CodeGenerationType_VCard"); 
-                case CodeGenerationType.WhatsApp: return resourceLoader.GetString("CodeGenerationType_WhatsApp"); 
-                case CodeGenerationType.Wifi: return resourceLoader.GetString("CodeGenerationType_Wifi"); 
-                case CodeGenerationType.Pdf: return resourceLoader.GetString("CodeGenerationType_Pdf"); 
-                case CodeGenerationType.App: return resourceLoader.GetString("CodeGenerationType_App"); 
-                case CodeGenerationType.Image: return resourceLoader.GetString("CodeGenerationType_Image"); 
-                case CodeGenerationType.Video: return resourceLoader.GetString("CodeGenerationType_Video"); 
-                case CodeGenerationType.SocialMedia: return resourceLoader.GetString("CodeGenerationType_SocialMedia"); 
-                case CodeGenerationType.Event: return resourceLoader.GetString("CodeGenerationType_Event");
+                case QrCodeGenerationType.Link: return resourceLoader.GetString("QrCodeGenerationType_Link");
+                case QrCodeGenerationType.Text: return resourceLoader.GetString("QrCodeGenerationType_Text"); 
+                case QrCodeGenerationType.Email: return resourceLoader.GetString("QrCodeGenerationType_Email"); 
+                case QrCodeGenerationType.Call: return resourceLoader.GetString("QrCodeGenerationType_Call"); 
+                case QrCodeGenerationType.Sms: return resourceLoader.GetString("QrCodeGenerationType_Sms"); 
+                case QrCodeGenerationType.VCard: return resourceLoader.GetString("QrCodeGenerationType_VCard"); 
+                case QrCodeGenerationType.WhatsApp: return resourceLoader.GetString("QrCodeGenerationType_WhatsApp"); 
+                case QrCodeGenerationType.Wifi: return resourceLoader.GetString("QrCodeGenerationType_Wifi"); 
+                case QrCodeGenerationType.Pdf: return resourceLoader.GetString("QrCodeGenerationType_Pdf"); 
+                case QrCodeGenerationType.App: return resourceLoader.GetString("QrCodeGenerationType_App"); 
+                case QrCodeGenerationType.Image: return resourceLoader.GetString("QrCodeGenerationType_Image"); 
+                case QrCodeGenerationType.Video: return resourceLoader.GetString("QrCodeGenerationType_Video"); 
+                case QrCodeGenerationType.SocialMedia: return resourceLoader.GetString("QrCodeGenerationType_SocialMedia"); 
+                case QrCodeGenerationType.Event: return resourceLoader.GetString("QrCodeGenerationType_Event");
                 default: throw new NotImplementedException($"No implementation for such value: {value}");
             }
         }

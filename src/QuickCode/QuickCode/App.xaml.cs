@@ -47,7 +47,6 @@ namespace QuickCode
         }
         #endregion
 
-
         #region Properties
 
         /// <summary>
@@ -66,7 +65,7 @@ namespace QuickCode
         {
             var services = new ServiceCollection();
 
-            services.AddTransient<CodeGeneratorViewModel>();
+            services.AddTransient<QrCodeGeneratorViewModel>();
 
             return services.BuildServiceProvider();
         }

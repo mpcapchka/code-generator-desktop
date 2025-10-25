@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="QuickCode.Pages.QrCodeGeneratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:QuickCode.Pages"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:controls="using:QuickCode.Controls"
+      xmlns:data="using:QuickCode.Components.Data"
+      xmlns:vm="using:QuickCode.ViewModel"
+      xmlns:i="using:Microsoft.Xaml.Interactivity"
+      d:DataContext="{d:DesignInstance vm:QrCodeGeneratorViewModel, IsDesignTimeCreatable=False}"
+      mc:Ignorable="d">
+    <Grid>
+        <Border VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="8" Padding="16"
+        Background="{ThemeResource LayerFillColorDefaultBrush}" MinWidth="600">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}"
+                        CornerRadius="8" Padding="16">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="{Binding QrCodeHeight, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Grid.Row="0" x:Uid="QrCodeGenerationPreview" Margin="0,0,0,12"
+                                   Style="{StaticResource BodyStrongTextBlockStyle}"
+                                   HorizontalAlignment="Center"/>
+
+                        <Image Grid.Row="1" 
+                               Width="{Binding QrCodeWidth, Mode=TwoWay}"
+                               Height="{Binding QrCodeHeight, Mode=TwoWay}" 
+                               Visibility="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NullToVisibilityConverter}}"
+                               Source="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Border Grid.Row="1"
+                                Width="{Binding QrCodeWidth, Mode=TwoWay}"
+                                Height="{Binding QrCodeHeight, Mode=TwoWay}" 
+                                BorderThickness="1" CornerRadius="6"
+                                BorderBrush="{ThemeResource CheckBoxDisabledBorderThemeBrush}"
+                                Visibility="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NullToInversedVisibilityConverter}}">
+                            <Viewbox>
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xED14;"/>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <ComboBox Grid.Row="2" Margin="0,16,0,0" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding CodeGenerationTypeOptions}"
+                          SelectedItem="{Binding CodeGenType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedTextConverter}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBox Grid.Row="3" Header="Message:" Margin="0,16,0,0" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="80"
+                         Text="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button Grid.Row="4" x:Uid="QrCodeGenerateButton" 
+                        Margin="0,16,0,0" HorizontalAlignment="Stretch"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Command="{Binding UpdateQrCodePreviewCommand}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

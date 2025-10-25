@@ -12,6 +12,8 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <conv:EnumToLocalizedTextConverter x:Key="EnumToLocalizedTextConverter"/>
+            <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <conv:NullToInversedVisibilityConverter x:Key="NullToInversedVisibilityConverter"/>
             <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>

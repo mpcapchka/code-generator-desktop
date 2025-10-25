@@ -1,6 +1,6 @@
 ﻿namespace QuickCode.Components.Data
 {
-    public enum CodeGenerationType
+    public enum QrCodeGenerationType
     {
         Link,
         Text,

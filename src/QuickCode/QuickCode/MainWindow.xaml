@@ -27,14 +27,26 @@
                   PaneToggleRequested="titleBar_PaneToggleRequested"/>
         <NavigationView x:Name="navView"
                         Grid.Row="1"
+                        IsSettingsVisible="False"
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
                         SelectionChanged="navView_SelectionChanged"
+                        AlwaysShowHeader="True"
                         Loaded="navView_Loaded">
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="singleCodePageNavItem" Content="Single code" Tag="SingleCodePage"/>
+                <NavigationViewItem x:Name="qrCodeGenerationNavItem" x:Uid="QrCodeGenerationNavItem" Tag="QrCodeGenerationPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xED14;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
-            <Frame x:Name="navFrame" />
+            <Frame x:Name="navFrame">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition  />
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
         </NavigationView>
 
     </Grid>
