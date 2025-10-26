@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="QuickCode.Pages.QrCodeGeneratorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickCode.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:QuickCode.ViewModels"
+    xmlns:controls="using:QuickCode.Controls"
+    xmlns:selectors="using:QuickCode.Components.TemplateSelectors"
+    d:DataContext="{d:DesignInstance vm:QrCodeGeneratorPageViewModel, IsDesignTimeCreatable=False}"
+    mc:Ignorable="d" HorizontalAlignment="Stretch">
+    <Page.Resources>
+        <DataTemplate x:Key="TextDataControlTempalte">
+            <controls:QrCodeTextControl/>
+        </DataTemplate>
+        <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
+                                                     TextDataControlTemplate="{StaticResource TextDataControlTempalte}"/>
+    </Page.Resources>
+    <Grid Margin="58,20,10,0" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Text="QR Code" Style="{StaticResource TitleTextBlockStyle}" Margin="0,0,0,20"/>
+
+        <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Header="Type:"
+                  SelectedItem="{Binding SelectedType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Types}"/>
+
+        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="QR Code Preview:" HorizontalAlignment="Center" TextAlignment="Center"
+                       Style="{StaticResource BodyTextBlockStyle}"/>
+            <Border BorderThickness="1" CornerRadius="8" Margin="0,8,0,0"
+                    BorderBrush="{ThemeResource CircleElevationBorderBrush}">
+                <Grid Width="256" Height="256">
+                    <Image Width="256" Height="256" 
+                           Visibility="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NullToVisibilityConverter}}"
+                           Source="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                           Opacity="{Binding IsBusy, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BusyStatusOpacityConverter}}"/>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xED14;" FontSize="128"
+                              Opacity="{Binding IsBusy, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BusyStatusOpacityConverter}}"
+                              Visibility="{Binding QrCodePreview, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NullToInversedVisibilityConverter}}"/>
+                    <ProgressRing IsIndeterminate="{Binding IsBusy, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <ContentControl Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                        Margin="0,8,0,0" HorizontalContentAlignment="Stretch"
+                        Content="{Binding SelectedDataModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+            <ContentControl.ContentTemplateSelector>
+                <selectors:QrCodeDataControlTemplateSelector TextDataControlTemplate="{StaticResource TextDataControlTempalte}"/>
+            </ContentControl.ContentTemplateSelector>
+        </ContentControl>
+
+    </Grid>
+</Page>
