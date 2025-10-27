@@ -13,7 +13,7 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
+    <Grid x:Name="gridXamlRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -27,7 +27,7 @@
                   PaneToggleRequested="titleBar_PaneToggleRequested"/>
         <NavigationView x:Name="navView"
                         Grid.Row="1"
-                        IsSettingsVisible="False"
+                        IsSettingsVisible="True"
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
                         SelectionChanged="navView_SelectionChanged"
@@ -40,7 +40,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
-            <Frame x:Name="navFrame" MaxWidth="1200">
+            <Frame x:Name="navFrame">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition  />

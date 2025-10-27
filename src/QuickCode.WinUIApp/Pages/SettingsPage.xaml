@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="QuickCode.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickCode.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:QuickCode.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance vm:SettingsPageViewModel, IsDesignTimeCreatable=False}">
+    <Grid Margin="58,20,10,0" ColumnSpacing="16" RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,24"
+                   x:Uid="SettingsPageTitle"
+                   Style="{ThemeResource TitleTextBlockStyle}"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <StackPanel>
+                <TextBlock Text="General:" Margin="0,0,0,8"/>
+                <Border Background="{ThemeResource LayerFillColorDefaultBrush}" Padding="16" CornerRadius="4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Application display language"
+                                   Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Application will appear in this selected language"
+                                   TextWrapping="Wrap"
+                                   Foreground="{ThemeResource TextFillColorTertiaryBrush}"/>
+                        <ComboBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" 
+                                  HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="160"
+                                  IsEnabled="False"
+                                  ItemsSource="{Binding AvailableCultures}"
+                                  SelectedItem="{Binding SelectedCulture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DisplayName}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="aboutSectionStackPanel" Grid.Row="1" Grid.Column="1" MinWidth="320" Orientation="Vertical">
+            <StackPanel Margin="12,0,0,0">
+                <TextBlock x:Uid="AboutSectionTitle" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Margin="0,12,0,0">
+                    <Run Text="{Binding ApplicationName}"/>
+                    <Run Text="{Binding BuildVersion}"/>
+                </TextBlock>
+                <TextBlock>
+                    <Run Text="©"/>
+                    <Run Text="{Binding BuildYear}"/>
+                    <Run Text="{Binding PublisherName}"/>
+                    <Run Text="."/>
+                    <Run x:Uid="AboutSectionAllRightsReserved"/>
+                </TextBlock>
+            </StackPanel>
+            
+            <HyperlinkButton x:Uid="AboutSectionShowThidPartySoftwareButton"
+                             Margin="0,8,0,0"
+                             Command="{Binding ShowThirdPartySoftwareAcknowledgmentsCommand}"/>
+        </StackPanel>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <!-- Mobile/Narrow -->
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="aboutSectionStackPanel.(Grid.Row)" Value="2" />
+                        <Setter Target="aboutSectionStackPanel.(Grid.Column)" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Tablet/Medium -->
+                <VisualState x:Name="MediumState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="aboutSectionStackPanel.(Grid.Row)" Value="2" />
+                        <Setter Target="aboutSectionStackPanel.(Grid.Column)" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- Desktop/Wide -->
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="aboutSectionStackPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="aboutSectionStackPanel.(Grid.Column)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

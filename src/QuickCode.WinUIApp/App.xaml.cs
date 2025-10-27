@@ -23,7 +23,7 @@ namespace QuickCode
     public partial class App : Application
     {
         #region Fields
-        private Window? _window;
+        private MainWindow? _window;
         #endregion
 
         #region Constructors
@@ -36,6 +36,7 @@ namespace QuickCode
 
         #region Properties
         public new static App Current => (App)Application.Current;
+        public MainWindow? MainWindow { get => _window; }
         public IServiceProvider Services { get; }
         #endregion
 
@@ -53,6 +54,7 @@ namespace QuickCode
             var services = new ServiceCollection();
 
             services.AddSingleton<QrCodeGeneratorPageViewModel>();
+            services.AddSingleton<SettingsPageViewModel>();
 
             return services.BuildServiceProvider();
         }

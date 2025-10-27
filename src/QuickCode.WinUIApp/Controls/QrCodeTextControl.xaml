@@ -10,7 +10,8 @@
     mc:Ignorable="d"
     d:DataContext="{d:DesignInstance vm:QrCodeTextDataViewModel, IsDesignTimeCreatable=False}">
     <Grid>
-        <TextBox Header="Text:" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox x:Uid="QrCodeGeneratorTextControlBox" 
+                 Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap" AcceptsReturn="True" MinHeight="180"/>
     </Grid>
 </UserControl>

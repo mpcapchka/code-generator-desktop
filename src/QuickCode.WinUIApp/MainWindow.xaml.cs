@@ -20,6 +20,10 @@ namespace QuickCode
         }
         #endregion
 
+        #region Properties
+        public XamlRoot XamlRoot { get => gridXamlRoot.XamlRoot; }
+        #endregion
+
         #region Handlers
         private void titleBar_PaneToggleRequested(TitleBar sender, object args)
         {
@@ -36,6 +40,7 @@ namespace QuickCode
             switch (tagStringVvalue)
             {
                 case "QrCodeGenerationPage": navFrame.Navigate(typeof(QrCodeGeneratorPage)); break;
+                case "Settings": navFrame.Navigate(typeof(SettingsPage)); break;
                 default: break;
             }
         }

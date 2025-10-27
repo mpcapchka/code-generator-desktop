@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutSectionAllRightsReserved.Text" xml:space="preserve">
+    <value>All rights reserved.</value>
+  </data>
+  <data name="AboutSectionShowThidPartySoftwareButton.Content" xml:space="preserve">
+    <value>Third-Party Software Acknowledgments</value>
+  </data>
+  <data name="AboutSectionTitle.Text" xml:space="preserve">
+    <value>About this app</value>
+  </data>
   <data name="QrCodeGenerationNavItem.Content" xml:space="preserve">
     <value>QR Code</value>
+  </data>
+  <data name="QrCodeGeneratorPageDescription.Text" xml:space="preserve">
+    <value>Create and Customize Your QR Code</value>
+  </data>
+  <data name="QrCodeGeneratorPageTitle.Text" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="QrCodeGeneratorPreview.Text" xml:space="preserve">
+    <value>QR Code Preview</value>
+  </data>
+  <data name="QrCodeGeneratorTextControlBox.Header" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="QrCodeTypesCombobox.Header" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="SettingsPageTitle.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>
