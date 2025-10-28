@@ -9,6 +9,7 @@ namespace QuickCode.Components.TemplateSelectors
     {
         #region Properties
         public DataTemplate TextDataControlTemplate { get; set; } = null!;
+        public DataTemplate CallDataControlTemplate { get; set; } = null!;
         #endregion
 
         #region Methods
@@ -19,6 +20,7 @@ namespace QuickCode.Components.TemplateSelectors
             return item switch
             {
                 QrCodeTextDataViewModel => TextDataControlTemplate,
+                QrCodeCallDataViewModel => CallDataControlTemplate,
                 _ => throw new NotImplementedException($"Not supported type: \"{item.GetType().Name}\"")
             };
         }

@@ -15,10 +15,14 @@
         <DataTemplate x:Key="TextDataControlTempalte">
             <controls:QrCodeTextControl/>
         </DataTemplate>
+        <DataTemplate x:Key="CallDataControlTemplate">
+            <controls:QrCodeCallControl/>
+        </DataTemplate>
         <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
+                                                     CallDataControlTemplate="{StaticResource CallDataControlTemplate}"
                                                      TextDataControlTemplate="{StaticResource TextDataControlTempalte}"/>
     </Page.Resources>
-    <Grid Margin="58,20,10,0" ColumnSpacing="10">
+    <Grid Margin="58,20,10,0" ColumnSpacing="10" MaxWidth="1200">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -61,11 +65,8 @@
 
         <ContentControl Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Stretch"
                         Margin="0,16,0,0" HorizontalContentAlignment="Stretch"
-                        Content="{Binding SelectedDataModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
-            <ContentControl.ContentTemplateSelector>
-                <selectors:QrCodeDataControlTemplateSelector TextDataControlTemplate="{StaticResource TextDataControlTempalte}"/>
-            </ContentControl.ContentTemplateSelector>
-        </ContentControl>
+                        Content="{Binding SelectedDataModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                        ContentTemplateSelector="{StaticResource DataControlTempalteSelector}"/>
 
     </Grid>
 </Page>

@@ -27,7 +27,7 @@ namespace QuickCode.ViewModels
             timer = new() { Interval = TimeSpan.FromMilliseconds(200) };
             timer.Tick += OnTimerTick;
             SelectedDataModel = new QrCodeTextDataViewModel();
-            Types = new QrCodeTypes[] { QrCodeTypes.Text };
+            Types = Enum.GetValues<QrCodeTypes>();
         }
         #endregion
 
@@ -47,8 +47,10 @@ namespace QuickCode.ViewModels
                 switch (type)
                 {
                     case QrCodeTypes.Text: SelectedDataModel = new QrCodeTextDataViewModel(); break;
+                    case QrCodeTypes.Call: SelectedDataModel = new QrCodeCallDataViewModel(); break;
                     default: throw new NotImplementedException($"Not supported type: \"{type}\"");
                 }
+                QrCodePreview = null;
             }
             catch (Exception ex)
             {

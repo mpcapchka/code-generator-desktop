@@ -129,6 +129,12 @@
   <data name="QrCodeGenerationNavItem.Content" xml:space="preserve">
     <value>QR Code</value>
   </data>
+  <data name="CountyCodeBox.Header" xml:space="preserve">
+    <value>Country code</value>
+  </data>
+  <data name="PhoneNumberBox.Header" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
   <data name="QrCodeGeneratorPageDescription.Text" xml:space="preserve">
     <value>Create and Customize Your QR Code</value>
   </data>
