@@ -15,6 +15,7 @@
   <ItemGroup>
     <None Remove="Controls\MarkdownTextControl.xaml" />
     <None Remove="Controls\QrCodeCallControl.xaml" />
+    <None Remove="Controls\QrCodeEmailControl.xaml" />
     <None Remove="Controls\QrCodeTextControl.xaml" />
     <None Remove="Pages\QrCodeGeneratorPage.xaml" />
     <None Remove="Pages\SettingsPage.xaml" />
@@ -60,6 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\QrCodeEmailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\QrCodeSmsControl.xaml">

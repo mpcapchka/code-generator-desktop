@@ -10,6 +10,7 @@ namespace QuickCode.Components.Data
     {
         Text,
         Call,
-        Sms
+        Sms,
+        Email
     }
 }

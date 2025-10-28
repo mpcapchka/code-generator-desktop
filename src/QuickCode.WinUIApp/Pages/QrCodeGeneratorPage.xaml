@@ -21,10 +21,14 @@
         <DataTemplate x:Key="SmsDataControlTemplate">
             <controls:QrCodeSmsControl/>
         </DataTemplate>
+        <DataTemplate x:Key="EmailDataControlTempalte">
+            <controls:QrCodeEmailControl/>
+        </DataTemplate>
         <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
                                                      CallDataControlTemplate="{StaticResource CallDataControlTemplate}"
                                                      TextDataControlTemplate="{StaticResource TextDataControlTempalte}"
-                                                     SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"/>
+                                                     SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"
+                                                     EmailDataControlTemplate="{StaticResource EmailDataControlTempalte}"/>
     </Page.Resources>
     <Grid Margin="58,20,10,0" ColumnSpacing="10" MaxWidth="1200">
         <Grid.RowDefinitions>
