@@ -18,9 +18,13 @@
         <DataTemplate x:Key="CallDataControlTemplate">
             <controls:QrCodeCallControl/>
         </DataTemplate>
+        <DataTemplate x:Key="SmsDataControlTemplate">
+            <controls:QrCodeSmsControl/>
+        </DataTemplate>
         <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
                                                      CallDataControlTemplate="{StaticResource CallDataControlTemplate}"
-                                                     TextDataControlTemplate="{StaticResource TextDataControlTempalte}"/>
+                                                     TextDataControlTemplate="{StaticResource TextDataControlTempalte}"
+                                                     SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"/>
     </Page.Resources>
     <Grid Margin="58,20,10,0" ColumnSpacing="10" MaxWidth="1200">
         <Grid.RowDefinitions>

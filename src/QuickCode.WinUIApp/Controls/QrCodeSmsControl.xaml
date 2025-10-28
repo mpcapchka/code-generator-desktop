@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="QuickCode.Controls.QrCodeSmsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickCode.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:QuickCode.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance vm:QrCodeSmsDataViewModel, IsDesignTimeCreatable=False}">
+    <Grid ColumnSpacing="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row="0" Grid.Column="0" x:Uid="CountyCodeBox"
+                  ItemsSource="{Binding PhoneCodeInfos}"
+                  SelectedItem="{Binding SelectedPhoneCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DisplayInfo}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Uid="PhoneNumberBox"
+                 InputScope="Number" MaxLength="12"
+                 BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                 Text="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" MinHeight="120"
+                 x:Uid="MessageTextBox" TextWrapping="Wrap" AcceptsReturn="True"
+                 Text="{Binding SmsText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+    
+</UserControl>

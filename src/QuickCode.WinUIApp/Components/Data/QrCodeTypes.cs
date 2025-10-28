@@ -9,6 +9,7 @@ namespace QuickCode.Components.Data
     public enum QrCodeTypes
     {
         Text,
-        Call
+        Call,
+        Sms
     }
 }

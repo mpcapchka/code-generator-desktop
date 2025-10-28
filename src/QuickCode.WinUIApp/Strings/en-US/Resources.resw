@@ -153,4 +153,7 @@
   <data name="SettingsPageTitle.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="MessageTextBox.Header" xml:space="preserve">
+    <value>Message</value>
+  </data>
 </root>

@@ -48,6 +48,7 @@ namespace QuickCode.ViewModels
                 {
                     case QrCodeTypes.Text: SelectedDataModel = new QrCodeTextDataViewModel(); break;
                     case QrCodeTypes.Call: SelectedDataModel = new QrCodeCallDataViewModel(); break;
+                    case QrCodeTypes.Sms: SelectedDataModel = new QrCodeSmsDataViewModel(); break;
                     default: throw new NotImplementedException($"Not supported type: \"{type}\"");
                 }
                 QrCodePreview = null;
