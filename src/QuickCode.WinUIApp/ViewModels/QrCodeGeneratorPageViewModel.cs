@@ -47,6 +47,7 @@ namespace QuickCode.ViewModels
                 switch (type)
                 {
                     case QrCodeTypes.Text: SelectedDataModel = new QrCodeTextDataViewModel(); break;
+                    case QrCodeTypes.Link: SelectedDataModel = new QrLinkDataViewModel(); break;
                     case QrCodeTypes.Call: SelectedDataModel = new QrCodeCallDataViewModel(); break;
                     case QrCodeTypes.Sms: SelectedDataModel = new QrCodeSmsDataViewModel(); break;
                     case QrCodeTypes.Email: SelectedDataModel = new QrCodeEmailDataViewModel(); break;
