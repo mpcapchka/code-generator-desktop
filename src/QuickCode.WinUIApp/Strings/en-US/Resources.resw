@@ -153,6 +153,27 @@
   <data name="LinkTextBox.PlaceholderText" xml:space="preserve">
     <value>https://example.com</value>
   </data>
+  <data name="QrCodeWifiSsidBox.Header" xml:space="preserve">
+    <value>Network name (SSID)</value>
+  </data>
+  <data name="QrCodeWifiEncryptionComboBox.Header" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="QrCodeWifiPasswordBox.Header" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="QrCodeWifiPasswordBox.PlaceholderText" xml:space="preserve">
+    <value>Enter password</value>
+  </data>
+  <data name="QrCodeWifiHiddenNetworkToggle.Header" xml:space="preserve">
+    <value>Hidden network</value>
+  </data>
+  <data name="QrCodeWifiHiddenNetworkToggle.OffContent" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="QrCodeWifiHiddenNetworkToggle.OnContent" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="QrCodeTypesCombobox.Header" xml:space="preserve">
     <value>Type:</value>
   </data>
