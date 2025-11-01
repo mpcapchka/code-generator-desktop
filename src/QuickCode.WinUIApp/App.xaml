@@ -13,6 +13,7 @@
             <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <conv:NullToInversedVisibilityConverter x:Key="NullToInversedVisibilityConverter"/>
             <conv:BusyStatusOpacityConverter x:Key="BusyStatusOpacityConverter"/>
+            <conv:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

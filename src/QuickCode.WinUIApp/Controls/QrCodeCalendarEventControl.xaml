@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="QuickCode.Controls.QrCodeCalendarEventControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickCode.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:QuickCode.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance vm:QrCodeCalendarEventViewModel, IsDesignTimeCreatable=False}">
+    <Grid RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MinWidth="220"
+                 x:Uid="CalendarEventNameTextBox"
+                 Text="{Binding EventName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <ToggleSwitch Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                      x:Uid="CalendarEventAllDayToggle"
+                      IsOn="{Binding IsAllDay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DatePicker Grid.Column="0"
+                        x:Uid="CalendarEventStartDatePicker"
+                        Date="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TimePicker Grid.Column="1"
+                        x:Uid="CalendarEventStartTimePicker"
+                        IsEnabled="{Binding IsAllDay, Converter={StaticResource BooleanNegationConverter}}"
+                        SelectedTime="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DatePicker Grid.Column="0"
+                        x:Uid="CalendarEventEndDatePicker"
+                        Date="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TimePicker Grid.Column="1"
+                        x:Uid="CalendarEventEndTimePicker"
+                        IsEnabled="{Binding IsAllDay, Converter={StaticResource BooleanNegationConverter}}"
+                        SelectedTime="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+
+        <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                 x:Uid="CalendarEventLocationTextBox"
+                 Text="{Binding Location, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>
