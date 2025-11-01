@@ -12,6 +12,7 @@ namespace QuickCode.Components.TemplateSelectors
         public DataTemplate CallDataControlTemplate { get; set; } = null!;
         public DataTemplate SmsDataControlTemplate { get; set; } = null!;
         public DataTemplate EmailDataControlTemplate { get; set; } = null!;
+        public DataTemplate LinkDataControlTemplate { get; set; } = null!;
         #endregion
 
         #region Methods
@@ -25,6 +26,7 @@ namespace QuickCode.Components.TemplateSelectors
                 QrCodeCallDataViewModel => CallDataControlTemplate,
                 QrCodeSmsDataViewModel => SmsDataControlTemplate,
                 QrCodeEmailDataViewModel => EmailDataControlTemplate,
+                QrLinkDataViewModel => LinkDataControlTemplate,
                 _ => throw new NotImplementedException($"Not supported type: \"{item.GetType().Name}\"")
             };
         }

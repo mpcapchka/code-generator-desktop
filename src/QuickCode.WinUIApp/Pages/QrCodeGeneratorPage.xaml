@@ -15,6 +15,9 @@
         <DataTemplate x:Key="TextDataControlTempalte">
             <controls:QrCodeTextControl/>
         </DataTemplate>
+        <DataTemplate x:Key="LinkDataControlTemplate">
+            <controls:QrCodeLinkControl/>
+        </DataTemplate>
         <DataTemplate x:Key="CallDataControlTemplate">
             <controls:QrCodeCallControl/>
         </DataTemplate>
@@ -27,6 +30,7 @@
         <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
                                                      CallDataControlTemplate="{StaticResource CallDataControlTemplate}"
                                                      TextDataControlTemplate="{StaticResource TextDataControlTempalte}"
+                                                     LinkDataControlTemplate="{StaticResource LinkDataControlTemplate}"
                                                      SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"
                                                      EmailDataControlTemplate="{StaticResource EmailDataControlTempalte}"/>
     </Page.Resources>

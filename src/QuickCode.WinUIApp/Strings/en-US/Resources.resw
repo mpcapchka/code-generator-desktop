@@ -147,6 +147,12 @@
   <data name="QrCodeGeneratorTextControlBox.Header" xml:space="preserve">
     <value>Text:</value>
   </data>
+  <data name="LinkTextBox.Header" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="LinkTextBox.PlaceholderText" xml:space="preserve">
+    <value>https://example.com</value>
+  </data>
   <data name="QrCodeTypesCombobox.Header" xml:space="preserve">
     <value>Type:</value>
   </data>
