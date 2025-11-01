@@ -27,6 +27,9 @@
         <DataTemplate x:Key="EmailDataControlTempalte">
             <controls:QrCodeEmailControl/>
         </DataTemplate>
+        <DataTemplate x:Key="CalendarEventDataControlTemplate">
+            <controls:QrCodeCalendarEventControl/>
+        </DataTemplate>
         <DataTemplate x:Key="WifiDataControlTemplate">
             <controls:QrCodeWifiControl/>
         </DataTemplate>
@@ -42,6 +45,7 @@
                                                      LinkDataControlTemplate="{StaticResource LinkDataControlTemplate}"
                                                      SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"
                                                      EmailDataControlTemplate="{StaticResource EmailDataControlTempalte}"
+                                                     CalendarEventDataControlTemplate="{StaticResource CalendarEventDataControlTemplate}"
                                                      WifiDataControlTemplate="{StaticResource WifiDataControlTemplate}"
                                                      LocationDataControlTemplate="{StaticResource LocationDataControlTemplate}"
                                                      VcardDataControlTemplate="{StaticResource VcardDataControlTemplate}"/>

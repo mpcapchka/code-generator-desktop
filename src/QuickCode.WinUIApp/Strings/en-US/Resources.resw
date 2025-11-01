@@ -189,6 +189,39 @@
   <data name="SubjectTextBox.Header" xml:space="preserve">
     <value>Subject</value>
   </data>
+  <data name="CalendarEventNameTextBox.Header" xml:space="preserve">
+    <value>Event name</value>
+  </data>
+  <data name="CalendarEventNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>e.g. Team sync</value>
+  </data>
+  <data name="CalendarEventAllDayToggle.Header" xml:space="preserve">
+    <value>All-day event</value>
+  </data>
+  <data name="CalendarEventAllDayToggle.OnContent" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CalendarEventAllDayToggle.OffContent" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="CalendarEventStartDatePicker.Header" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="CalendarEventStartTimePicker.Header" xml:space="preserve">
+    <value>Start time</value>
+  </data>
+  <data name="CalendarEventEndDatePicker.Header" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="CalendarEventEndTimePicker.Header" xml:space="preserve">
+    <value>End time</value>
+  </data>
+  <data name="CalendarEventLocationTextBox.Header" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="CalendarEventLocationTextBox.PlaceholderText" xml:space="preserve">
+    <value>Conference room or meeting link</value>
+  </data>
   <data name="QrCodeVcardPersonSectionTitle.Text" xml:space="preserve">
     <value>Person</value>
   </data>
