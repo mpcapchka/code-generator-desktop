@@ -30,13 +30,17 @@
         <DataTemplate x:Key="WifiDataControlTemplate">
             <controls:QrCodeWifiControl/>
         </DataTemplate>
+        <DataTemplate x:Key="VcardDataControlTemplate">
+            <controls:QrCodeVcardControl/>
+        </DataTemplate>
         <selectors:QrCodeDataControlTemplateSelector x:Key="DataControlTempalteSelector"
                                                      CallDataControlTemplate="{StaticResource CallDataControlTemplate}"
                                                      TextDataControlTemplate="{StaticResource TextDataControlTempalte}"
                                                      LinkDataControlTemplate="{StaticResource LinkDataControlTemplate}"
                                                      SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"
                                                      EmailDataControlTemplate="{StaticResource EmailDataControlTempalte}"
-                                                     WifiDataControlTemplate="{StaticResource WifiDataControlTemplate}"/>
+                                                     WifiDataControlTemplate="{StaticResource WifiDataControlTemplate}"
+                                                     VcardDataControlTemplate="{StaticResource VcardDataControlTemplate}"/>
     </Page.Resources>
     <Grid Margin="58,20,10,0" ColumnSpacing="10" MaxWidth="1200">
         <Grid.RowDefinitions>

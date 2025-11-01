@@ -14,6 +14,7 @@ namespace QuickCode.Components.TemplateSelectors
         public DataTemplate EmailDataControlTemplate { get; set; } = null!;
         public DataTemplate LinkDataControlTemplate { get; set; } = null!;
         public DataTemplate WifiDataControlTemplate { get; set; } = null!;
+        public DataTemplate VcardDataControlTemplate { get; set; } = null!;
         #endregion
 
         #region Methods
@@ -29,6 +30,7 @@ namespace QuickCode.Components.TemplateSelectors
                 QrCodeEmailDataViewModel => EmailDataControlTemplate,
                 QrLinkDataViewModel => LinkDataControlTemplate,
                 QrWifiDataViewModel => WifiDataControlTemplate,
+                QrCodeVcardDataViewModel => VcardDataControlTemplate,
                 _ => throw new NotImplementedException($"Not supported type: \"{item.GetType().Name}\"")
             };
         }
