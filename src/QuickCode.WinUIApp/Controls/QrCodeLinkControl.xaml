@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:QuickCode.ViewModels"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignInstance vm:QrLinkDataViewModel, IsDesignTimeCreatable=False}">
+    d:DataContext="{d:DesignInstance vm:QrCodeLinkDataViewModel, IsDesignTimeCreatable=False}">
     <Grid>
         <TextBox x:Uid="LinkTextBox"
                  Text="{Binding Link, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

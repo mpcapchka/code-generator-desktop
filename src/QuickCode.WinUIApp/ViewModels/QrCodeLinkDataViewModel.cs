@@ -3,7 +3,7 @@ using System;
 
 namespace QuickCode.ViewModels
 {
-    public class QrLinkDataViewModel : ObservableObject, IQrCodeDataViewModel
+    public class QrCodeLinkDataViewModel : ObservableObject, IQrCodeDataViewModel
     {
         #region Fields
         private string link = string.Empty;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuickCode.ViewModels
 {
-    public class QrWifiDataViewModel : ObservableObject, IQrCodeDataViewModel
+    public class QrCodeWifiDataViewModel : ObservableObject, IQrCodeDataViewModel
     {
         #region Fields
         private string ssid = string.Empty;
@@ -15,7 +15,7 @@ namespace QuickCode.ViewModels
         #endregion
 
         #region Constructors
-        public QrWifiDataViewModel()
+        public QrCodeWifiDataViewModel()
         {
             Encryptions = Enum.GetValues<WifiEncryptionType>();
             SelectedEncryption = WifiEncryptionType.WPA2;

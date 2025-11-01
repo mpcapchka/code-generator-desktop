@@ -29,8 +29,8 @@ namespace QuickCode.Components.TemplateSelectors
                 QrCodeCallDataViewModel => CallDataControlTemplate,
                 QrCodeSmsDataViewModel => SmsDataControlTemplate,
                 QrCodeEmailDataViewModel => EmailDataControlTemplate,
-                QrLinkDataViewModel => LinkDataControlTemplate,
-                QrWifiDataViewModel => WifiDataControlTemplate,
+                QrCodeLinkDataViewModel => LinkDataControlTemplate,
+                QrCodeWifiDataViewModel => WifiDataControlTemplate,
                 QrCodeVcardDataViewModel => VcardDataControlTemplate,
                 QrCodeLocationViewModel => LocationDataControlTemplate,
                 _ => throw new NotImplementedException($"Not supported type: \"{item.GetType().Name}\"")

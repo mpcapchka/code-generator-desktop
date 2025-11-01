@@ -13,7 +13,7 @@ namespace QuickCode.Controls
 
         private void OnPasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (DataContext is QrWifiDataViewModel viewModel)
+            if (DataContext is QrCodeWifiDataViewModel viewModel)
             {
                 viewModel.Password = PasswordBox.Password;
             }
@@ -21,7 +21,7 @@ namespace QuickCode.Controls
 
         private void OnDataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
         {
-            if (args.NewValue is QrWifiDataViewModel viewModel)
+            if (args.NewValue is QrCodeWifiDataViewModel viewModel)
             {
                 PasswordBox.Password = viewModel.Password;
             }
