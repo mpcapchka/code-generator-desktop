@@ -51,6 +51,7 @@ namespace QuickCode.ViewModels
                     case QrCodeTypes.Call: SelectedDataModel = new QrCodeCallDataViewModel(); break;
                     case QrCodeTypes.Sms: SelectedDataModel = new QrCodeSmsDataViewModel(); break;
                     case QrCodeTypes.Email: SelectedDataModel = new QrCodeEmailDataViewModel(); break;
+                    case QrCodeTypes.SepaPayment: SelectedDataModel = new QrCodeSepaPaymentDataViewModel(); break;
                     case QrCodeTypes.CalendarEvent: SelectedDataModel = new QrCodeCalendarEventViewModel(); break;
                     case QrCodeTypes.Wifi: SelectedDataModel = new QrCodeWifiDataViewModel(); break;
                     case QrCodeTypes.Location: SelectedDataModel = new QrCodeLocationViewModel(); break;
