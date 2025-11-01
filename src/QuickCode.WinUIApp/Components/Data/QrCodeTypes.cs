@@ -13,6 +13,7 @@ namespace QuickCode.Components.Data
         Call,
         Sms,
         Email,
-        Wifi
+        Wifi,
+        Vcard
     }
 }

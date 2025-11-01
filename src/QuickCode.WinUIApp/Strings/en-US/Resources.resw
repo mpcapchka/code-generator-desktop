@@ -189,4 +189,55 @@
   <data name="SubjectTextBox.Header" xml:space="preserve">
     <value>Subject</value>
   </data>
+  <data name="QrCodeVcardPersonSectionTitle.Text" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="VcardFirstNameTextBox.Header" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="VcardLastNameTextBox.Header" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="QrCodeVcardContactSectionTitle.Text" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="VcardPhoneNumberTextBox.Header" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="VcardMobileTextBox.Header" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="VcardEmailTextBox.Header" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="VcardWebsiteTextBox.Header" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="QrCodeVcardCompanySectionTitle.Text" xml:space="preserve">
+    <value>Company information</value>
+  </data>
+  <data name="VcardCompanyNameTextBox.Header" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="VcardJobTitleTextBox.Header" xml:space="preserve">
+    <value>Job title</value>
+  </data>
+  <data name="VcardFaxTextBox.Header" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="QrCodeVcardLocationSectionTitle.Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="VcardAddressTextBox.Header" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="VcardCityTextBox.Header" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="VcardPostCodeTextBox.Header" xml:space="preserve">
+    <value>Post code</value>
+  </data>
+  <data name="VcardCountyTextBox.Header" xml:space="preserve">
+    <value>County</value>
+  </data>
 </root>
