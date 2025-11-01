@@ -12,6 +12,7 @@ namespace QuickCode.Components.Data
         Link,
         Call,
         Sms,
-        Email
+        Email,
+        Wifi
     }
 }
