@@ -27,9 +27,6 @@
         <DataTemplate x:Key="EmailDataControlTempalte">
             <controls:QrCodeEmailControl/>
         </DataTemplate>
-        <DataTemplate x:Key="SepaPaymentDataControlTemplate">
-            <controls:QrCodeSepaPaymentControl/>
-        </DataTemplate>
         <DataTemplate x:Key="CalendarEventDataControlTemplate">
             <controls:QrCodeCalendarEventControl/>
         </DataTemplate>
@@ -48,7 +45,6 @@
                                                      LinkDataControlTemplate="{StaticResource LinkDataControlTemplate}"
                                                      SmsDataControlTemplate="{StaticResource SmsDataControlTemplate}"
                                                      EmailDataControlTemplate="{StaticResource EmailDataControlTempalte}"
-                                                     SepaPaymentDataControlTemplate="{StaticResource SepaPaymentDataControlTemplate}"
                                                      CalendarEventDataControlTemplate="{StaticResource CalendarEventDataControlTemplate}"
                                                      WifiDataControlTemplate="{StaticResource WifiDataControlTemplate}"
                                                      LocationDataControlTemplate="{StaticResource LocationDataControlTemplate}"

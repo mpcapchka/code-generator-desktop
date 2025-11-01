@@ -13,7 +13,6 @@ namespace QuickCode.Components.Data
         Call,
         Sms,
         Email,
-        SepaPayment,
         CalendarEvent,
         Wifi,
         Location,
